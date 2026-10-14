@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diego Baracho Rodovalho Varela</title>
+<meta name="description" content="Estudante de Engenharia Aeroespacial na UnB, com foco em dinâmica dos fluidos computacional e aerodinâmica. Currículo, projetos e o foguete Boscov, 1º lugar na LASC 2025.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Diego Baracho Rodovalho Varela">
+<meta property="og:description" content="Estudante de Engenharia Aeroespacial na UnB, com foco em dinâmica dos fluidos computacional e aerodinâmica. Currículo, projetos e o foguete Boscov, 1º lugar na LASC 2025.">
+<meta name="theme-color" content="#1d5c88">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231d5c88'/%3E%3Ctext x='16' y='21' font-family='Arial,sans-serif' font-size='13' font-weight='700' text-anchor='middle' fill='white'%3EDB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: one reading column with a label rail, like a technical spec sheet. uma coluna de leitura com trilho de rótulos à esquerda, como uma folha de especificação técnica */
+:root {
+  --bg: #f4f6f7;
+  --surface: #ffffff;
+  --fg: #16202a;
+  --muted: #56636e;
+  --rule: #d3dbe1;
+  --accent: #1d5c88;
+  --accent-soft: #e3edf5;
+  --font-display: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-data: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1519; --surface: #151d23; --fg: #e4eaee; --muted: #93a2ad;
+    --rule: #27333c; --accent: #74b3df; --accent-soft: #18293a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1519; --surface: #151d23; --fg: #e4eaee; --muted: #93a2ad;
+  --rule: #27333c; --accent: #74b3df; --accent-soft: #18293a; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  padding-inline: 20px;
+  padding-block: 48px 72px;
+}
+.wrap { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+
+/* ---------- cabeçalho ---------- */
+header.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+  border-bottom: 2px solid var(--fg);
+  padding-bottom: 32px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+  text-wrap: balance;
+}
+.hero .role {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--muted);
+  margin: 0 0 22px;
+}
+.contacts { display: flex; flex-direction: column; gap: 8px; margin: 0 0 24px; }
+.contact {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  font-family: var(--font-data); font-size: 14px;
+}
+.contact .k {
+  font-family: var(--font-display); font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+  width: 76px; flex-shrink: 0;
+}
+.contact .v { user-select: all; min-width: 0; overflow-wrap: anywhere; }
+.contact a { color: var(--accent); text-decoration: none; overflow-wrap: anywhere; }
+.contact a:hover { text-decoration: underline; }
+.copy {
+  font-family: var(--font-display); font-size: 12px; font-weight: 500;
+  color: var(--accent); background: transparent;
+  border: 1px solid var(--rule); border-radius: 4px;
+  padding: 2px 8px; cursor: pointer;
+}
+.copy:hover { border-color: var(--accent); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  font-family: var(--font-display); font-weight: 600; font-size: 15px;
+  background: var(--accent); color: var(--bg);
+  border: 0; border-radius: 6px; padding: 11px 18px; cursor: pointer;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn[disabled] { opacity: 0.6; cursor: progress; }
+.note { font-family: var(--font-display); font-size: 13px; color: var(--muted); }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.video { margin: 8px 0 0; display: flex; flex-direction: column; gap: 8px; }
+.video video {
+  display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 16 / 9;
+  background: #000; border-radius: 6px; border: 1px solid var(--rule);
+}
+.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.tile { margin: 0; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.tile video, .tile img {
+  display: block; width: 100%; max-width: 100%; aspect-ratio: 9 / 16; object-fit: cover;
+  border-radius: 6px; background: #000; border: 1px solid var(--rule);
+}
+.tile .zoom { padding: 0; border: 0; background: none; cursor: zoom-in; display: block; width: 100%; border-radius: 6px; }
+.tile figcaption { font-family: var(--font-display); font-size: 13px; color: var(--muted); }
+.more { font-family: var(--font-display); font-size: 14px; }
+.more a { color: var(--accent); text-decoration: none; }
+.more a:hover { text-decoration: underline; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 10; background: rgba(6, 10, 13, 0.93);
+  display: flex; align-items: center; justify-content: center; cursor: zoom-out;
+  padding: calc(56px + env(safe-area-inset-top, 0px)) 16px calc(24px + env(safe-area-inset-bottom, 0px));
+}
+.lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 4px; }
+.lightbox .close {
+  position: absolute; top: calc(12px + env(safe-area-inset-top, 0px)); right: 16px;
+  font-family: var(--font-display); font-size: 14px; font-weight: 600;
+  color: #f2f5f7; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px; padding: 6px 12px; cursor: pointer;
+}
+.video figcaption { font-family: var(--font-display); font-size: 14px; color: var(--muted); max-width: 70ch; }
+
+/* ---------- destaques ---------- */
+.facts {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0;
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+}
+.fact { padding: 18px 20px; display: flex; flex-direction: column; gap: 4px; }
+.fact + .fact { border-left: 1px solid var(--rule); }
+.fact .n {
+  font-family: var(--font-data); font-weight: 500; font-size: 26px;
+  color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1.2;
+}
+.fact .d { font-family: var(--font-display); font-size: 14px; color: var(--muted); line-height: 1.4; }
+
+/* ---------- seções ---------- */
+section.block {
+  display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 28px;
+}
+section.block > h2 {
+  font-family: var(--font-display); font-size: 12px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
+  margin: 4px 0 0; line-height: 1.4;
+}
+.body { min-width: 0; display: flex; flex-direction: column; gap: 26px; }
+.body p { margin: 0; max-width: 66ch; }
+
+.entry { display: flex; flex-direction: column; gap: 6px; }
+.entry h3 {
+  font-family: var(--font-display); font-size: 18px; font-weight: 600;
+  margin: 0; line-height: 1.35; text-wrap: balance;
+}
+.meta {
+  font-family: var(--font-display); font-size: 14px; color: var(--muted);
+  display: flex; flex-wrap: wrap; gap: 4px 14px;
+}
+.meta span + span::before { content: "·"; margin-right: 14px; color: var(--rule); }
+ul.pts { margin: 6px 0 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; max-width: 70ch; }
+ul.pts li::marker { color: var(--accent); }
+.data { font-family: var(--font-data); font-size: 0.86em; font-variant-numeric: tabular-nums; }
+strong { font-weight: 600; }
+
+dl.skills { margin: 0; display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 14px 22px; }
+dl.skills dt {
+  font-family: var(--font-display); font-weight: 600; font-size: 15px; line-height: 1.5;
+}
+dl.skills dd { margin: 0; min-width: 0; }
+
+dl.langs { margin: 0; display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 8px 22px; }
+dl.langs dt { font-family: var(--font-display); font-weight: 600; font-size: 15px; }
+dl.langs dd { margin: 0; }
+
+.award {
+  border-left: 3px solid var(--accent); background: var(--accent-soft);
+  padding: 14px 18px; border-radius: 0 6px 6px 0;
+}
+.award h3 { margin-bottom: 4px; }
+
+footer {
+  border-top: 1px solid var(--rule); padding-top: 20px;
+  font-family: var(--font-display); font-size: 13px; color: var(--muted);
+  display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between;
+}
+
+/* ---------- telas estreitas ---------- */
+@media (max-width: 760px) {
+  body { font-size: 16px; padding-block: 28px 56px; padding-inline: 16px; }
+  header.hero { grid-template-columns: minmax(0, 1fr); }
+  section.block { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  dl.skills { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  dl.skills dd { margin-bottom: 12px; }
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tile.finale { grid-column: span 2; }
+  .tile.finale img { aspect-ratio: 3 / 4; }
+  .contact { gap: 2px 10px; }
+  .contact .k { width: 100%; }
+  .fact + .fact { border-left: 0; border-top: 1px solid var(--rule); }
+}
+
+/* ---------- standalone additions ---------- */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+a.btn { display: inline-block; text-decoration: none; }
+.topbar { display: flex; justify-content: flex-end; margin-bottom: -20px; }
+.topbar a {
+  font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--accent); text-decoration: none; border: 1px solid var(--rule);
+  border-radius: 999px; padding: 4px 12px;
+}
+.topbar a:hover { border-color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="topbar" aria-label="Idioma"><a href="en/" hreflang="en" lang="en">English version</a></nav>
+
+  <header class="hero">
+    <div>
+      <h1>Diego Baracho Rodovalho Varela</h1>
+      <p class="role">Estudante de Engenharia Aeroespacial · Dinâmica dos Fluidos Computacional e Aerodinâmica</p>
+
+      <div class="contacts">
+        <div class="contact"><span class="k">Cidade</span><span class="v-plain">São José dos Campos, SP</span></div>
+        <div class="contact"><span class="k">E-mail</span><a class="v" id="email" href="mailto:diegobaracho1234@gmail.com">diegobaracho1234@gmail.com</a><button class="copy" type="button" data-copy="email" id="copy-email">Copiar</button></div>
+        <div class="contact"><span class="k">Telefone</span><span class="v" id="phone">+55 61 99994-3252</span><button class="copy" type="button" data-copy="phone" id="copy-phone">Copiar</button></div>
+        <div class="contact"><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/diegobaracho-26ab22248" target="_blank" rel="noopener">linkedin.com/in/diegobaracho-26ab22248</a></div>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="cv/Curriculo_Diego_Baracho_Rodovalho_Varela.pdf" download>Baixar currículo em PDF</a>
+      </div>
+    </div>
+
+  </header>
+
+  <div class="facts" aria-label="Destaques">
+    <div class="fact"><span class="n">1º lugar</span><span class="d">LASC 2025, categoria Hybrid/Liquid Rockets</span></div>
+    <div class="fact"><span class="n">TCC em OpenFOAM</span><span class="d">início em 2027.1, com trabalho preparatório no caso DPW7 da NASA</span></div>
+    <div class="fact"><span class="n">5º semestre</span><span class="d">de monitoria na UnB, em aerodinâmica, cálculo e física</span></div>
+  </div>
+
+  <section class="block" id="perfil">
+    <h2>Perfil</h2>
+    <div class="body">
+      <p>Estudante de Engenharia Aeroespacial com formação voltada à dinâmica dos fluidos computacional, com experiência prática em simulação por volumes finitos, geração e avaliação de malha, modelagem de turbulência e validação experimental em túnel de vento. Liderei o núcleo de aerodinâmica e estabilidade de uma equipe universitária de foguetes ao longo do projeto e do voo de um veículo de propulsão híbrida premiado em competição internacional. Atualmente no quinto semestre de monitoria, abrangendo aerodinâmica, cálculo vetorial e mecânica. Busco oportunidades para aplicar minhas habilidades e crescer na área de pesquisa e engenharia aeroespacial.</p>
+    </div>
+  </section>
+
+  <section class="block" id="formacao">
+    <h2>Formação</h2>
+    <div class="body">
+      <div class="entry">
+        <h3>Bacharelado em Engenharia Aeroespacial</h3>
+        <div class="meta"><span>Universidade de Brasília (UnB), Campus Gama</span><span>junho de 2022 a dezembro de 2027 (previsto)</span></div>
+        <ul class="pts">
+          <li>Trabalho de Conclusão de Curso com início no semestre 2027.1, a ser desenvolvido em OpenFOAM.</li>
+          <li>Trabalho preparatório atribuído pelo orientador: simulações introdutórias de escoamento externo 3D em OpenFOAM sobre a geometria asa-fuselagem do NASA Common Research Model (AIAA Drag Prediction Workshop, DPW7), primeiro exercício de configuração de caso e malha em 3D.</li>
+          <li>Disciplinas relevantes: mecânica dos fluidos, aerodinâmica de sistemas aeroespaciais, transferência de calor, mecânica e dinâmica de estruturas aeroespaciais, cálculo vetorial e métodos numéricos.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="competencias">
+    <h2>Competências técnicas</h2>
+    <div class="body">
+      <dl class="skills">
+        <dt>Solvers CFD</dt>
+        <dd>Ansys Fluent (RANS 2D de perfis aerodinâmicos, escoamento externo sobre veículos lançadores, URANS, DDES); OpenFOAM (estrutura de caso, blockMesh, snappyHexMesh, configuração de fvSchemes e fvSolution, algoritmos de acoplamento pressão/velocidade, modelos de turbulência, pós-processamento)</dd>
+        <dt>Configuração de simulação</dt>
+        <dd>Seleção de modelos de turbulência e compreensão da formulação subjacente; modelagem invíscida e viscosa; definição de condições de contorno; geração e refino de malha, com interpretação de y+ e métricas de qualidade; adequação do solver à física de cada problema</dd>
+        <dt>Dinâmica de voo</dt>
+        <dd>OpenRocket, RocketPy: simulação de trajetória, previsão de apogeu, margem estática e análise de estabilidade</dd>
+        <dt>Programação</dt>
+        <dd>MATLAB; Python (implementação de solver numérico); fluxo de trabalho em Linux</dd>
+        <dt>Fabricação</dt>
+        <dd>Laminação manual de fibra de vidro e carbono com resina epóxi; pintura com pistola pressurizada e lixamento progressivo até rugosidade controlada</dd>
+        <dt>Experimental</dt>
+        <dd>Ensaios em túnel de vento; desenvolvimento de balança aerodinâmica e validação de medições; caracterização de rugosidade superficial</dd>
+        <dt>CAD e modelagem</dt>
+        <dd>CATIA; projeto e modelagem de superfícies aerodinâmicas: aletas, coifas e boattails</dd>
+        <dt>Domínios</dt>
+        <dd>Aerodinâmica; mecânica dos fluidos; transferência de calor; modelagem de turbulência; redução de arrasto; estabilidade de foguetes</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block" id="experiencia">
+    <h2>Experiência em engenharia e pesquisa</h2>
+    <div class="body">
+      <div class="entry">
+        <h3>Líder do Núcleo de Aerodinâmica e Estabilidade</h3>
+        <div class="meta"><span>Capital Rocket Team, UnB</span><span>junho de 2024 a novembro de 2025</span><span>Professor orientador: Olexiy Shynkarenko</span></div>
+        <ul class="pts">
+          <li>Liderança técnica do núcleo responsável pelo projeto aerodinâmico e pela análise de estabilidade do veículo lançador da equipe.</li>
+          <li>Coordenei o desenvolvimento aerodinâmico do <strong>Boscov</strong>, foguete de propulsão híbrida projetado para <span class="data">3 km</span> de apogeu.</li>
+          <li>Simulação de trajetória e estabilidade em RocketPy, refinando previsões de apogeu e margem estática.</li>
+          <li>Fabricação das estruturas aerodinâmicas por laminação manual de fibra de vidro e carbono com resina epóxi.</li>
+          <li>Pesquisei métodos de aplicação de pintura para redução do arrasto de atrito e executei o processo resultante, aplicando o revestimento com pistola pressurizada e lixando progressivamente cada superfície aerodinâmica até rugosidade medida abaixo de <span class="data">5 µm</span>.</li>
+          <li>Capacitei e supervisionei tecnicamente novos membros; padronizei as metodologias e os fluxos de simulação do núcleo.</li>
+          <li>O Boscov voou na <strong>Latin American Space Challenge (LASC) 2025</strong>, em Iacanga (SP), e conquistou o <strong>primeiro lugar na categoria Hybrid/Liquid Rockets</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <h3>Safety Manager da missão Boscov</h3>
+        <div class="meta"><span>Capital Rocket Team, Latin American Space Challenge</span><span>2025</span></div>
+        <ul class="pts">
+          <li>Um dos quatro cargos obrigatórios da estrutura de missão exigida pelas regras da competição, ao lado de Mission Leader, Operations Manager e Technology Manager.</li>
+          <li>Principal autoridade da missão em segurança, responsável pela conformidade com a política de segurança da LASC em todas as fases: projeto, desenvolvimento, testes e operações em campo.</li>
+          <li>Responsável pela análise de modos de falha e efeitos (FMEA) e pelas avaliações de risco da missão, e pelo monitoramento e mitigação de riscos durante o desenvolvimento e os testes.</li>
+          <li>Participação nas revisões de segurança da missão e na identificação e resposta a não conformidades durante o evento.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <h3>Membro do Núcleo de Aerodinâmica e Estabilidade</h3>
+        <div class="meta"><span>Capital Rocket Team, UnB</span><span>dezembro de 2023 a junho de 2024</span></div>
+        <ul class="pts">
+          <li>Simulação de trajetória e análise de estabilidade em OpenRocket, avaliando apogeu, margem estática e comportamento do veículo em voo.</li>
+          <li>Simulações CFD de escoamento externo ao redor do veículo lançador em Ansys Fluent, com foco em estimativa de coeficientes aerodinâmicos e caracterização de arrasto.</li>
+          <li>Projeto e modelagem dos componentes aerodinâmicos do veículo: aletas, coifa e boattail.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <h3>Desenvolvimento de Balança Aerodinâmica</h3>
+        <div class="meta"><span>Capital Rocket Team com Draco Volans e Mamutes do Cerrado (equipes de aerodesign da UnB)</span><span>primeiro semestre de 2024</span></div>
+        <ul class="pts">
+          <li>Contribuí para o projeto estrutural de uma balança aerodinâmica para medição de forças e momentos, e para a fabricação de parte de seus componentes.</li>
+          <li>Validei leituras da balança no túnel de vento da Faculdade de Tecnologia (FT) da UnB, ensaiando placas planas em diferentes ângulos de ataque e correlacionando as cargas medidas com previsões analíticas.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="boscov">
+    <h2>Boscov em campo</h2>
+    <div class="body">
+      <p>Campanha de lançamento na Latin American Space Challenge 2025, em Iacanga (SP).</p>
+      <div class="gallery">
+        <figure class="tile">
+          <button type="button" class="zoom" id="zoom-tenda" data-full="media/boscov_tenda.jpg"><img src="media/boscov_tenda.jpg" alt="Boscov sobre a bancada da equipe durante a preparação para o voo" loading="lazy"></button>
+          <figcaption>Preparação na tenda</figcaption>
+        </figure>
+        <figure class="tile">
+          <button type="button" class="zoom" id="zoom-montagem" data-full="media/boscov_montagem.jpg"><img src="media/boscov_montagem.jpg" alt="Dois integrantes da equipe fixando o Boscov no trilho de lançamento" loading="lazy"></button>
+          <figcaption>Montagem no trilho</figcaption>
+        </figure>
+        <figure class="tile">
+          <button type="button" class="zoom" id="zoom-rampa" data-full="media/boscov_rampa.jpg"><img src="media/boscov_rampa.jpg" alt="Boscov montado na rampa de lançamento, com o nome pintado na fuselagem" loading="lazy"></button>
+          <figcaption>Na rampa</figcaption>
+        </figure>
+        <figure class="tile">
+          <video id="launch-video" data-autoplay src="media/boscov_lancamento.mp4" poster="media/boscov_lancamento_poster.jpg" controls muted loop playsinline preload="metadata" aria-label="Vídeo do lançamento do Boscov visto da rampa"></video>
+          <figcaption>Lançamento (vídeo com som)</figcaption>
+        </figure>
+        <figure class="tile">
+          <button type="button" class="zoom" id="zoom-ignicao" data-full="media/boscov_ignicao.jpg"><img src="media/boscov_ignicao.jpg" alt="Ignição do motor híbrido com o Boscov ainda no trilho" loading="lazy"></button>
+          <figcaption>Ignição</figcaption>
+        </figure>
+        <figure class="tile">
+          <button type="button" class="zoom" id="zoom-decolagem" data-full="media/boscov_decolagem.jpg"><img src="media/boscov_decolagem.jpg" alt="Boscov deixando o trilho de lançamento com o motor híbrido aceso" loading="lazy"></button>
+          <figcaption>Decolagem</figcaption>
+        </figure>
+        <figure class="tile">
+          <video id="flight-video" data-autoplay src="media/boscov_voo.mp4" poster="media/boscov_voo_poster.jpg" controls muted loop playsinline preload="metadata" aria-label="Vídeo do voo do Boscov visto de longe"></video>
+          <figcaption>Subida vista de longe (vídeo com som)</figcaption>
+        </figure>
+        <figure class="tile">
+          <button type="button" class="zoom" id="zoom-recuperacao" data-full="media/boscov_recuperacao.jpg"><img src="media/boscov_recuperacao.jpg" alt="Boscov inteiro no solo após o voo, com as aletas e a fuselagem preservadas" loading="lazy"></button>
+          <figcaption>Recuperação após o voo</figcaption>
+        </figure>
+        <figure class="tile finale">
+          <button type="button" class="zoom" id="zoom-trofeu" data-full="media/boscov_trofeu.jpg"><img src="media/boscov_trofeu.jpg" alt="Troféu de primeiro lugar na categoria HRE/LRE da Latin American Space Challenge 2025" loading="lazy"></button>
+          <figcaption>Troféu de 1º lugar, categoria Hybrid/Liquid Rockets (HRE/LRE)</figcaption>
+        </figure>
+      </div>
+      <p class="more"><a href="https://www.instagram.com/p/DTjFU8HkYY3/" target="_blank" rel="noopener">Ver o lançamento no Instagram</a></p>
+    </div>
+  </section>
+
+  <section class="block" id="projeto">
+    <h2>Projeto independente</h2>
+    <div class="body">
+      <div class="entry">
+        <h3>Estudo de Modelagem de Turbulência: URANS versus DDES</h3>
+        <div class="meta"><span>Iniciativa própria</span><span>Ansys Fluent</span></div>
+        <ul class="pts">
+          <li>Comparei URANS (SST k-ω) com DDES (<em>delayed detached-eddy simulation</em>) para o escoamento sobre um perfil NACA 4412 a <span class="data">14°</span> de incidência, imediatamente antes do estol: <span class="data">Re ≈ 9 × 10⁶</span>, <span class="data">780 mil</span> células, <span class="data">y+ máx ≈ 1,72</span>.</li>
+          <li>Os coeficientes de sustentação e arrasto do URANS ficaram próximos de dados experimentais publicados, enquanto o DDES os superestimou em <span class="data">30% a 40%</span>, discrepância que atribuí a uma malha insuficiente para um método que resolve escalas, dentro do limite de um milhão de células da licença estudantil do Ansys. Documentado em publicação técnica no LinkedIn.</li>
+        </ul>
+        <figure class="video">
+          <video id="cfd-video" data-autoplay src="media/urans_ddes.mp4" poster="media/urans_ddes_poster.jpg" controls muted loop playsinline preload="metadata"></video>
+          <figcaption>Magnitude de velocidade sobre o NACA 4412 a 14° no Ansys Fluent: primeiro URANS, depois DDES, e ao final os dois lado a lado.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="docencia">
+    <h2>Experiência em docência</h2>
+    <div class="body">
+      <div class="entry">
+        <h3>Monitoria: Aerodinâmica de Sistemas Aeroespaciais</h3>
+        <div class="meta"><span>Universidade de Brasília</span><span>desde setembro de 2025</span><span>Supervisor: Prof. Olexiy Shynkarenko</span></div>
+        <ul class="pts">
+          <li>Orientação em simulações CFD 2D de perfis aerodinâmicos com modelagem RANS de turbulência no Ansys Fluent, cobrindo pré-processamento, solução e pós-processamento.</li>
+          <li>Geração e refino de malha estruturada, com avaliação de métricas de qualidade (y+, razão de aspecto, skewness) e definição de condições de contorno.</li>
+          <li>Seleção de modelos de turbulência, configuração de esquemas numéricos e avaliação de convergência por análise de resíduos.</li>
+          <li>Extração e interpretação de coeficientes de sustentação e arrasto, e de contornos de pressão e velocidade sobre o perfil.</li>
+          <li>Análise do campo de escoamento para identificar separação da camada limite e início do estol, orientando os alunos na leitura da física por trás dos resultados numéricos.</li>
+          <li>Disciplina ministrada com base em <em>Fundamentals of Aerodynamics</em>, de John D. Anderson.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <h3>Monitoria: Cálculo 3</h3>
+        <div class="meta"><span>Universidade de Brasília</span><span>2024</span></div>
+        <ul class="pts">
+          <li>Apoio aos alunos em integrais duplas e triplas, transformações de coordenadas, integrais de linha e de superfície, campos vetoriais e os teoremas de Green, Stokes e da divergência.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <h3>Monitoria: Física 1</h3>
+        <div class="meta"><span>Universidade de Brasília</span><span>2023</span></div>
+        <ul class="pts">
+          <li>Apoio aos alunos em listas, com base no <em>Curso de Física Básica</em>, de Moysés Nussenzveig: cinemática, dinâmica newtoniana, trabalho e energia, momento linear, dinâmica de corpo rígido e oscilações.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="premios">
+    <h2>Prêmios</h2>
+    <div class="body">
+      <div class="entry award">
+        <h3>Primeiro lugar, categoria Hybrid/Liquid Rockets</h3>
+        <div class="meta"><span>Latin American Space Challenge (LASC) 2025, 6ª edição</span><span>Iacanga, SP</span></div>
+        <p>Concedido ao projeto Boscov, cujo desenvolvimento aerodinâmico liderei.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="complementar">
+    <h2>Formação complementar</h2>
+    <div class="body">
+      <div class="entry">
+        <h3>Computational Fluid Dynamics Fundamentals, Partes 1 a 3</h3>
+        <div class="meta"><span>Aidan Wimshurst, Fluid Mechanics 101</span><span>Udemy</span></div>
+        <p>Discretização por volumes finitos da equação de transporte escalar; diferenças centrais e <em>upwind</em>; número de Péclet e estabilidade; formulações 2D; condições de contorno de Dirichlet e Neumann em forma matricial; resíduos e balanços de fluxo de calor como critérios de verificação; funções de parede (y+, u+, y*); discretização em malhas não estruturadas e métricas de qualidade de malha.</p>
+      </div>
+      <div class="entry">
+        <h3>OpenFOAM Beginner Core Courses</h3>
+        <div class="meta"><span>Caesar Wiratama</span><span>Udemy</span></div>
+        <p>Estrutura de pastas de caso; blockMesh e snappyHexMesh; preparação de geometria; condições de contorno; esquemas numéricos e acoplamento pressão/velocidade; modelagem de turbulência; fluxo de trabalho em Linux.</p>
+      </div>
+      <div class="entry">
+        <h3>Curso de CATIA</h3>
+        <div class="meta"><span>Zenit Aerospace</span><span>2022</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="idiomas">
+    <h2>Idiomas</h2>
+    <div class="body">
+      <dl class="langs">
+        <dt>Português</dt><dd>Nativo</dd>
+        <dt>Inglês</dt><dd>Fluência profissional plena · EF SET English Certificate, <span class="data">81/100</span> (C2)</dd>
+        <dt>Espanhol</dt><dd>Intermediário</dd>
+        <dt>Japonês</dt><dd>Básico</dd>
+        <dt>Latim</dt><dd>Leitura básica</dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer>
+    <span>Diego Baracho Rodovalho Varela</span>
+    <span>Engenharia Aeroespacial · Universidade de Brasília</span>
+  </footer>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+  <button type="button" class="close" id="lightbox-close">Fechar</button>
+  <img id="lightbox-img" alt="">
+</div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var v = en.target;
+        if (en.isIntersecting) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
+        else v.pause();
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll("video[data-autoplay]").forEach(function (v) { io.observe(v); });
+  }
+
+  var lb = document.getElementById("lightbox");
+  var lbImg = document.getElementById("lightbox-img");
+  var lbClose = document.getElementById("lightbox-close");
+  var lastZoom = null;
+  function openLb(btn) {
+    lastZoom = btn;
+    var img = btn.querySelector("img");
+    lbImg.src = btn.getAttribute("data-full");
+    lbImg.alt = img ? img.alt : "";
+    lb.hidden = false;
+    lbClose.focus();
+  }
+  function closeLb() {
+    lb.hidden = true; lbImg.removeAttribute("src");
+    if (lastZoom) lastZoom.focus();
+  }
+  document.querySelectorAll(".zoom").forEach(function (btn) {
+    btn.addEventListener("click", function () { openLb(btn); });
+  });
+  lb.addEventListener("click", closeLb);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !lb.hidden) closeLb(); });
+
+  document.querySelectorAll(".copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = document.getElementById(btn.getAttribute("data-copy"));
+      var text = target.textContent.trim();
+      function done() { btn.textContent = "Copiado"; setTimeout(function () { btn.textContent = "Copiar"; }, 1600); }
+      function selectFallback() {
+        var r = document.createRange(); r.selectNodeContents(target);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = "Selecionado";
+        setTimeout(function () { btn.textContent = "Copiar"; }, 1600);
+      }
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, selectFallback);
+        } else { selectFallback(); }
+      } catch (e) { selectFallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
