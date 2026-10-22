@@ -137,6 +137,12 @@ button { font-family: inherit; }
 .nav-links a:hover {
   color: var(--cyan);
 }
+.brand-name, .brand-tag, .nav-links a, .nav-actions a { white-space: nowrap; }
+@media (max-width: 1180px) {
+  .brand-tag { display: none; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 13px; }
+}
 .nav-actions {
   display: flex;
   align-items: center;
@@ -1372,8 +1378,8 @@ footer {
 
     <ul class="nav-links">
       <li><a href="#perfil">Sobre</a></li>
-      <li><a href="#capital">Missão Capital</a></li>
-      <li><a href="#boscov">Boscov em Campo</a></li>
+      <li><a href="#capital">Capital Rocket Team</a></li>
+      <li><a href="#boscov">LASC 2025</a></li>
       <li><a href="#cfd">CFD & Pesquisa</a></li>
       <li><a href="#competencias">Competências</a></li>
       <li><a href="#formacao">Formação</a></li>
@@ -1510,7 +1516,7 @@ footer {
           <ul class="scrolly-card-list">
             <li>Liderança técnica do núcleo responsável pelo projeto aerodinâmico e pela análise de estabilidade do veículo lançador da equipe.</li>
             <li>Coordenei o desenvolvimento aerodinâmico do <strong>Boscov</strong>, foguete de propulsão híbrida projetado para <span class="badge-highlight">3 km de apogeu</span>.</li>
-            <li>Simulação de trajetória e estabilidade em <strong>RocketPy</strong>, refinando previsões de apogeu e margem estática.</li>
+            <li>Simulação de trajetória e estabilidade em <strong>RocketPy</strong> e <strong>OpenRocket</strong>, refinando previsões de apogeu e margem estática.</li>
             <li>Capacitei e supervisionei tecnicamente novos membros; padronizei as metodologias e os fluxos de simulação do núcleo.</li>
           </ul>
         </div>
@@ -1584,7 +1590,7 @@ footer {
     <!-- Cabeçalho da Seção -->
     <div class="boscov-header-overlay" id="boscov-header">
       <div class="section-tag">Evidências Visuais & Campanha</div>
-      <h2 class="section-title">Boscov em Campo (LASC 2025)</h2>
+      <h2 class="section-title">Boscov na LASC 2025</h2>
       <p>O lançamento do Boscov e registros da campanha em Iacanga (SP).</p>
     </div>
 
