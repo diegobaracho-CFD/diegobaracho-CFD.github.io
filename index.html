@@ -143,6 +143,13 @@ button { font-family: inherit; }
   .nav-links { gap: 16px; }
   .nav-links a { font-size: 13px; }
 }
+@media (max-width: 768px) {
+  .academic-entry-header > * { max-width: 100%; }
+  .academic-entry-header .academic-period { white-space: normal; }
+}
+@media (max-width: 480px) {
+  .brand-name { display: none; }
+}
 .nav-actions {
   display: flex;
   align-items: center;
@@ -1115,7 +1122,7 @@ button { font-family: inherit; }
 /* ---------- COMPETÊNCIAS TÉCNICAS ---------- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
   margin-top: 24px;
 }
@@ -1349,9 +1356,10 @@ footer {
   .editorial-project-top { flex-direction: column; align-items: flex-start; gap: 10px; }
   .scrolly-top-bar { flex-direction: column; align-items: flex-start; gap: 8px; }
   .scrolly-cards-viewport { height: 480px; }
-  .scrolly-card { padding: 28px 24px; }
-  .scrolly-card-title { font-size: 22px; }
-  .scrolly-card-list li { font-size: 15px; }
+  .scrolly-card { padding: 22px 20px; }
+  .scrolly-card-title { font-size: 20px; }
+  .scrolly-card-list li { font-size: 13.5px; line-height: 1.5; }
+  .scroll-hint { display: none; }
   .boscov-three-photos { padding: 0 12px; gap: 10px; }
   .boscov-photos-row { grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .photo-card img { height: 140px; }
@@ -1362,6 +1370,15 @@ footer {
   .boscov-insta-content { flex-direction: column; gap: 6px; }
   .boscov-insta-text { font-size: 12px; }
   .boscov-insta-btn { width: 100%; justify-content: center; font-size: 12.5px; padding: 7px 14px; }
+}
+@media (max-width: 768px) {
+  .scrolly-card-meta { font-size: 12px; gap: 8px; margin-bottom: 12px; padding-bottom: 10px; }
+  .scrolly-card-list { gap: 8px; }
+  .scrolly-card-list li { line-height: 1.5; }
+  .scrolly-card-meta { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 2px; }
+  .scrolly-card-meta span { justify-content: flex-start; text-align: left; }
+  .scrolly-card-meta span:nth-child(even) { display: none; }
+  .scrolly-cards-viewport { margin-top: 36px; }
 }
 </style>
 </head>
@@ -1380,7 +1397,7 @@ footer {
       <li><a href="#perfil">Sobre</a></li>
       <li><a href="#capital">Capital Rocket Team</a></li>
       <li><a href="#boscov">LASC 2025</a></li>
-      <li><a href="#cfd">CFD & Pesquisa</a></li>
+      <li><a href="#cfd">Projeto Independente</a></li>
       <li><a href="#competencias">Competências</a></li>
       <li><a href="#formacao">Formação</a></li>
     </ul>
@@ -1399,12 +1416,12 @@ footer {
 <header class="hero-section container">
   <div class="hero-eyebrow">
     <span class="eyebrow-accent"></span>
-    <span class="eyebrow-text">Engenharia Aeroespacial · Dinâmica dos Fluidos Computacional</span>
+    <span class="eyebrow-text">Estudante de Engenharia Aeroespacial · Dinâmica dos Fluidos Computacional e Aerodinâmica</span>
   </div>
 
   <h1 class="hero-title">Diego Baracho Rodovalho Varela</h1>
   <p class="hero-subtitle">
-    Estudante de Engenharia Aeroespacial na <strong>UnB</strong>, com foco em <strong>dinâmica dos fluidos computacional</strong> e aerodinâmica. Liderei o Núcleo de Aerodinâmica e Estabilidade da Capital Rocket Team e fui Safety Manager da missão Boscov, <strong>primeiro lugar na categoria Hybrid/Liquid Rockets da Latin American Space Challenge (LASC) 2025</strong>.
+    Estudante de Engenharia Aeroespacial na <strong>Universidade de Brasília (UnB)</strong>, com foco em <strong>dinâmica dos fluidos computacional e aerodinâmica</strong>. Líder do Núcleo de Aerodinâmica e Estabilidade da Capital Rocket Team e Safety Manager da Missão Boscov, <strong>primeiro lugar na categoria Hybrid/Liquid Rockets da Latin American Space Challenge (LASC) 2025</strong>.
   </p>
 
   <!-- Barra Editorial de Contatos com Links e Cópia -->
@@ -1443,13 +1460,13 @@ footer {
     <div class="stat-card">
       <div class="stat-number">1º Lugar</div>
       <div class="stat-label">LASC 2025</div>
-      <div class="stat-desc">Categoria Hybrid/Liquid Rockets, com o foguete Boscov.</div>
+      <div class="stat-desc">Latin American Space Challenge (LASC) 2025, Iacanga, SP. Concedido ao projeto Boscov.</div>
     </div>
 
     <div class="stat-card">
       <div class="stat-number">NASA DPW7</div>
       <div class="stat-label">TCC utilizando OpenFOAM</div>
-      <div class="stat-desc">Trabalho preparatório sobre a geometria asa-fuselagem do NASA Common Research Model.</div>
+      <div class="stat-desc">Trabalho preparatório sobre a geometria asa-fuselagem do NASA Common Research Model (AIAA Drag Prediction Workshop, DPW7).</div>
     </div>
 
 
@@ -1463,14 +1480,13 @@ footer {
 
 <!-- PERFIL RESUMIDO -->
 <section class="section-block container" id="perfil">
-  <div class="section-tag">Visão Geral</div>
-  <h2 class="section-title">Perfil Profissional</h2>
+  <h2 class="section-title">Perfil</h2>
   <div class="card-glass">
     <p class="profile-text">
       Estudante de Engenharia Aeroespacial com formação voltada à <strong>dinâmica dos fluidos computacional</strong>, com experiência prática em simulação por volumes finitos, geração e avaliação de malha, modelagem de turbulência e validação experimental em túnel de vento.
     </p>
     <p class="profile-text" style="margin-top: 14px;">
-      Liderei o núcleo de aerodinâmica e estabilidade de uma equipe universitária de foguetes, a <strong>Capital Rocket Team</strong>, ao longo do projeto e do voo do <strong>Boscov</strong>, veículo de propulsão híbrida premiado em competição internacional. Tenho 5 semestres de monitoria, abrangendo aerodinâmica, cálculo vetorial e mecânica. Busco oportunidades para aplicar minhas habilidades e crescer na área de pesquisa e engenharia aeroespacial.
+      Liderei o núcleo de aerodinâmica e estabilidade de uma equipe universitária de foguetes ao longo do projeto e do voo de um veículo de propulsão híbrida premiado em competição internacional. Tenho 5 semestres de monitoria, abrangendo aerodinâmica, cálculo vetorial e mecânica. Busco oportunidades para aplicar minhas habilidades e crescer na área de pesquisa e engenharia aeroespacial.
     </p>
   </div>
 </section>
@@ -1488,7 +1504,7 @@ footer {
     <div class="scrolly-top-bar">
       <div class="scrolly-mission-badge">
         <span class="badge-dot"></span>
-        <span class="badge-title">TRAJETÓRIA · CAPITAL ROCKET TEAM (UnB)</span>
+        <span class="badge-title">CAPITAL ROCKET TEAM · UNIVERSIDADE DE BRASÍLIA</span>
       </div>
 
       <div class="scrolly-progress-wrap">
@@ -1506,12 +1522,11 @@ footer {
 
         <!-- Card 1: Liderança & Aerodinâmica -->
         <div class="scrolly-card active" id="card-step-1">
-          <div class="scrolly-card-step">Fase 01 · Projeto & Trajetória</div>
           <h3 class="scrolly-card-title">Líder do Núcleo de Aerodinâmica e Estabilidade</h3>
           <div class="scrolly-card-meta">
-            <span>Capital Rocket Team, UnB</span>
+            <span>Capital Rocket Team, Universidade de Brasília</span>
             <span>·</span>
-            <span>Junho de 2024 – Novembro de 2025</span>
+            <span>junho de 2024 a novembro de 2025</span>
           </div>
           <ul class="scrolly-card-list">
             <li>Liderança técnica do núcleo responsável pelo projeto aerodinâmico e pela análise de estabilidade do veículo lançador da equipe.</li>
@@ -1523,48 +1538,43 @@ footer {
 
         <!-- Card 2: Fabricação e Acabamento de Superfície -->
         <div class="scrolly-card" id="card-step-2">
-          <div class="scrolly-card-step">Fase 02 · Fabricação</div>
-          <h3 class="scrolly-card-title">Estruturas em Compósito & Acabamento</h3>
+          <h3 class="scrolly-card-title">Fabricação</h3>
           <div class="scrolly-card-meta">
-            <span>Fabricação</span>
+            <span>Capital Rocket Team, Universidade de Brasília</span>
             <span>·</span>
-            <span>Redução de Arrasto</span>
+            <span>Boscov</span>
           </div>
           <ul class="scrolly-card-list">
             <li>Fabricação das estruturas aerodinâmicas por laminação manual de <strong>fibra de vidro e carbono</strong> com resina epóxi.</li>
-            <li>Pesquisei métodos de aplicação de pintura para redução do arrasto de atrito e executei o processo resultante, aplicando o revestimento com pistola pressurizada.</li>
-            <li>Lixamento progressivo à mão de cada superfície aerodinâmica até rugosidade medida <span class="badge-highlight">abaixo de 5 µm</span>.</li>
+            <li>Pesquisei métodos de aplicação de pintura para redução do arrasto de atrito e executei o processo resultante, aplicando o revestimento com pistola pressurizada e lixando progressivamente cada superfície aerodinâmica até <span class="badge-highlight">rugosidade medida abaixo de 5 µm</span>.</li>
           </ul>
         </div>
 
         <!-- Card 3: Safety Management LASC -->
         <div class="scrolly-card" id="card-step-3">
-          <div class="scrolly-card-step">Fase 03 · Segurança da Missão</div>
           <h3 class="scrolly-card-title">Safety Manager da Missão Boscov</h3>
           <div class="scrolly-card-meta">
-            <span>Latin American Space Challenge</span>
+            <span>Capital Rocket Team, Latin American Space Challenge (LASC)</span>
             <span>·</span>
-            <span>LASC 2025</span>
+            <span>2025</span>
           </div>
           <ul class="scrolly-card-list">
-            <li>Um dos quatro cargos obrigatórios da estrutura de missão exigida pela competição.</li>
-            <li>Principal autoridade da missão em segurança e responsável pela conformidade com a política de segurança da LASC em todas as fases, do projeto às operações em campo.</li>
-            <li>Responsável pela <strong>análise de modos de falha e efeitos (FMEA)</strong> e pelas avaliações de risco da missão.</li>
-            <li>Revisões de segurança e resposta a não conformidades durante o evento.</li>
+            <li>Um dos quatro cargos obrigatórios da estrutura de missão exigida pela competição: principal autoridade da missão em segurança e responsável pela conformidade com a política de segurança da LASC em todas as fases, do projeto às operações em campo.</li>
+            <li>Responsável pela análise de modos de falha e efeitos (<strong>FMEA</strong>) e pelas avaliações de risco da missão, pelas revisões de segurança e pela resposta a não conformidades durante o evento.</li>
           </ul>
         </div>
 
         <!-- Card 4: 1º Lugar LASC 2025 -->
         <div class="scrolly-card" id="card-step-4">
-          <div class="scrolly-card-step">Fase 04 · Apogeu & Conquista</div>
-          <h3 class="scrolly-card-title">Primeiro Lugar na LASC 2025</h3>
+          <h3 class="scrolly-card-title">Primeiro lugar, categoria Hybrid/Liquid Rockets</h3>
           <div class="scrolly-card-meta">
-            <span>Iacanga, SP</span>
+            <span>Latin American Space Challenge (LASC) 2025</span>
             <span>·</span>
-            <span>Categoria Hybrid/Liquid Rockets</span>
+            <span>Iacanga, SP</span>
           </div>
           <ul class="scrolly-card-list">
-            <li>O Boscov voou na Latin American Space Challenge (LASC) 2025, em Iacanga (SP), e conquistou o <strong>primeiro lugar</strong> na categoria <em>Hybrid/Liquid Rockets</em>.</li>
+            <li>O Boscov voou na Latin American Space Challenge (LASC) 2025, em Iacanga (SP), e conquistou o <strong>primeiro lugar na categoria Hybrid/Liquid Rockets</strong>.</li>
+            <li>Concedido ao projeto Boscov, cujo desenvolvimento aerodinâmico liderei.</li>
             <li><strong>Estabilidade perfeita</strong> na saída do trilho e ao longo de todo o voo.</li>
           </ul>
         </div>
@@ -1574,7 +1584,7 @@ footer {
 
     <!-- Indicador de Scroll -->
     <div class="scroll-hint">
-      <span>Role para ver a ascensão</span>
+      <span>Role para continuar</span>
       <div class="scroll-hint-arrow">↓</div>
     </div>
   </div>
@@ -1589,7 +1599,6 @@ footer {
     
     <!-- Cabeçalho da Seção -->
     <div class="boscov-header-overlay" id="boscov-header">
-      <div class="section-tag">Evidências Visuais & Campanha</div>
       <h2 class="section-title">Boscov na LASC 2025</h2>
       <p>O lançamento do Boscov e registros da campanha em Iacanga (SP).</p>
     </div>
@@ -1667,8 +1676,7 @@ footer {
      EXPERIÊNCIA PRÉVIA NA CAPITAL & BALANÇA AERODINÂMICA
      ======================================================= -->
 <section class="section-block container">
-  <div class="section-tag">Engenharia Aeroespacial</div>
-  <h2 class="section-title">Outros Projetos na Capital Rocket Team</h2>
+  <h2 class="section-title">Experiência em Engenharia e Pesquisa</h2>
 
   <div class="editorial-projects-list">
     <!-- Projeto 1: Membro do Núcleo -->
@@ -1677,9 +1685,9 @@ footer {
         <div>
           <h3 class="editorial-project-title">Membro do Núcleo de Aerodinâmica e Estabilidade</h3>
           <div class="editorial-project-meta">
-            <span>Capital Rocket Team, UnB</span>
+            <span>Capital Rocket Team, Universidade de Brasília</span>
             <span class="meta-dot">·</span>
-            <span>Dezembro de 2023 – Junho de 2024</span>
+            <span>dezembro de 2023 a junho de 2024</span>
           </div>
         </div>
         <div class="editorial-tech-tags">
@@ -1703,7 +1711,7 @@ footer {
           <div class="editorial-project-meta">
             <span>Capital Rocket Team com Draco Volans e Mamutes do Cerrado (equipes de aerodesign da UnB)</span>
             <span class="meta-dot">·</span>
-            <span>Primeiro semestre de 2024</span>
+            <span>primeiro semestre de 2024</span>
           </div>
         </div>
         <div class="editorial-tech-tags">
@@ -1724,12 +1732,11 @@ footer {
      CFD & PROJETO INDEPENDENTE (EDITORIAL & THEATER)
      ======================================================= -->
 <section class="section-block container" id="cfd">
-  <div class="section-tag">Pesquisa & Fluidodinâmica Computacional</div>
   
   <div class="cfd-editorial-header">
-    <h2 class="cfd-editorial-title">Estudo CFD: URANS versus DDES</h2>
+    <h2 class="cfd-editorial-title">Estudo de Modelagem de Turbulência: URANS versus DDES</h2>
     <div class="cfd-editorial-subtitle">
-      <span>Estudo de Modelagem de Turbulência sobre o Perfil NACA 4412</span>
+      <span>Projeto Independente</span>
       <span class="cfd-editorial-submeta">Iniciativa própria · Ansys Fluent</span>
     </div>
   </div>
@@ -1757,20 +1764,13 @@ footer {
   <!-- Texto Editorial Aberto e Espaçado -->
   <div class="cfd-editorial-body">
     <p class="cfd-lead-text">
-      Comparei <strong>URANS (SST k-ω)</strong> com <strong>DDES (delayed detached-eddy simulation)</strong> para o escoamento sobre um perfil NACA 4412 a 14° de incidência, imediatamente antes do estol.
+      Comparei URANS (SST k-ω) com DDES (<em>delayed detached-eddy simulation</em>) para o escoamento sobre um perfil NACA 4412 a 14° de incidência, imediatamente antes do estol: Re ≈ 9 × 10⁶, 780 mil células, y+ máximo ≈ 1,72.
     </p>
-
-    <div class="cfd-findings-grid">
-      <div class="cfd-finding-card">
-        <div class="cfd-finding-tag">URANS</div>
-        <p>Os coeficientes de sustentação (C<sub>L</sub>) e arrasto (C<sub>D</sub>) do URANS ficaram próximos de dados experimentais publicados.</p>
-      </div>
-      <div class="cfd-finding-card">
-        <div class="cfd-finding-tag">DDES</div>
-        <p>O DDES superestimou os coeficientes em 30% a 40%, discrepância que atribuí a uma malha insuficiente para um método que resolve escalas, dentro do limite de um milhão de células da licença estudantil do Ansys. Documentado em publicação técnica no LinkedIn.</p>
-      </div>
-    </div>
+    <p class="cfd-lead-text" style="margin-top: 16px;">
+      Os coeficientes de sustentação e arrasto do URANS ficaram próximos de dados experimentais publicados, enquanto o DDES os superestimou em 30% a 40%, discrepância que atribuí a uma malha insuficiente para um método que resolve escalas, dentro do limite de um milhão de células da licença estudantil do Ansys. Documentado em publicação técnica no LinkedIn.
+    </p>
   </div>
+
 
   <!-- VÍDEO DO CFD: TEATRO CINEMATOGRÁFICO COM SCROLL-SCALE -->
   <div class="cfd-theater-section" id="cfd-theater">
@@ -1793,7 +1793,6 @@ footer {
      COMPETÊNCIAS TÉCNICAS
      ======================================================= -->
 <section class="section-block container" id="competencias">
-  <div class="section-tag">Habilidades & Ferramentas</div>
   <h2 class="section-title">Competências Técnicas</h2>
 
   <div class="skills-grid">
@@ -1801,7 +1800,7 @@ footer {
       <div class="skill-icon">🌪️</div>
       <h3 class="skill-title">Solvers CFD</h3>
       <div class="skill-content">
-        <strong>Ansys Fluent</strong> (RANS 2D de perfis aerodinâmicos, escoamento externo sobre veículos lançadores, URANS, DDES); <strong>OpenFOAM</strong> (estrutura de caso, blockMesh, snappyHexMesh, configuração de fvSchemes e fvSolution, algoritmos de acoplamento pressão/velocidade, modelos de turbulência, pós-processamento).
+        <strong>Ansys Fluent</strong> (RANS 2D de perfis aerodinâmicos, escoamento externo sobre veículos lançadores, URANS, DDES); <strong>OpenFOAM</strong> (estrutura de caso, blockMesh, snappyHexMesh, configuração de fvSchemes e fvSolution, algoritmos de acoplamento pressão/velocidade, modelos de turbulência, pós-processamento)
       </div>
     </div>
 
@@ -1809,7 +1808,7 @@ footer {
       <div class="skill-icon">📐</div>
       <h3 class="skill-title">Configuração de Simulação</h3>
       <div class="skill-content">
-        Seleção de modelos de turbulência e compreensão da formulação subjacente; modelagem invíscida e viscosa; definição de condições de contorno; geração e refino de malha, com interpretação de <strong>y+</strong> e métricas de qualidade; adequação do solver à física de cada problema.
+        Seleção de modelos de turbulência e compreensão da formulação subjacente; modelagem invíscida e viscosa; definição de condições de contorno; geração e refino de malha, com interpretação de y+ e métricas de qualidade; adequação do solver à física de cada problema
       </div>
     </div>
 
@@ -1817,7 +1816,7 @@ footer {
       <div class="skill-icon">🚀</div>
       <h3 class="skill-title">Dinâmica de Voo</h3>
       <div class="skill-content">
-        <strong>OpenRocket</strong> e <strong>RocketPy</strong>: simulação de trajetória, previsão de apogeu, margem estática e análise de estabilidade.
+        <strong>OpenRocket</strong>, <strong>RocketPy</strong>: simulação de trajetória, previsão de apogeu, margem estática e análise de estabilidade
       </div>
     </div>
 
@@ -1825,15 +1824,23 @@ footer {
       <div class="skill-icon">💻</div>
       <h3 class="skill-title">Programação</h3>
       <div class="skill-content">
-        <strong>MATLAB</strong>; <strong>Python</strong> (implementação de solver numérico); fluxo de trabalho em Linux.
+        <strong>MATLAB</strong>; <strong>Python</strong> (implementação de solver numérico); fluxo de trabalho em Linux
       </div>
     </div>
 
     <div class="skill-box">
       <div class="skill-icon">🛠️</div>
-      <h3 class="skill-title">Fabricação & Experimental</h3>
+      <h3 class="skill-title">Fabricação</h3>
       <div class="skill-content">
-        Laminação manual de <strong>fibra de vidro e carbono</strong> com resina epóxi; pintura com pistola pressurizada e lixamento progressivo até rugosidade controlada; ensaios em túnel de vento; desenvolvimento de balança aerodinâmica e validação de medições; caracterização de rugosidade superficial.
+        Laminação manual de fibra de vidro e carbono com resina epóxi; pintura com pistola pressurizada e lixamento progressivo até rugosidade controlada
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <div class="skill-icon">🌬️</div>
+      <h3 class="skill-title">Experimental</h3>
+      <div class="skill-content">
+        Ensaios em túnel de vento; desenvolvimento de balança aerodinâmica e validação de medições; caracterização de rugosidade superficial
       </div>
     </div>
 
@@ -1841,7 +1848,15 @@ footer {
       <div class="skill-icon">✏️</div>
       <h3 class="skill-title">CAD e Modelagem</h3>
       <div class="skill-content">
-        <strong>CATIA</strong> e <strong>Autodesk Fusion</strong>; projeto e modelagem de superfícies aerodinâmicas: aletas, coifas e boattails.
+        <strong>CATIA</strong>; <strong>Autodesk Fusion</strong>; projeto e modelagem de superfícies aerodinâmicas: aletas, coifas e boattails
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <div class="skill-icon">📚</div>
+      <h3 class="skill-title">Domínios</h3>
+      <div class="skill-content">
+        Aerodinâmica; mecânica dos fluidos; transferência de calor; modelagem de turbulência; redução de arrasto; estabilidade de foguetes
       </div>
     </div>
   </div>
@@ -1851,8 +1866,7 @@ footer {
      FORMAÇÃO & MONITORIAS
      ======================================================= -->
 <section class="section-block container" id="formacao">
-  <div class="section-tag">Trajetória Acadêmica</div>
-  <h2 class="section-title">Formação & Experiência em Docência</h2>
+  <h2 class="section-title">Formação e Experiência em Docência</h2>
 
   <div class="academic-editorial-layout">
     <!-- 1. Formação Principal / Destaque -->
@@ -1861,9 +1875,9 @@ footer {
         <div class="academic-title-wrap">
           <span class="academic-badge-tag">Graduação</span>
           <h3 class="academic-role-title">Bacharelado em Engenharia Aeroespacial</h3>
-          <div class="academic-institution">Universidade de Brasília (UnB) · Campus Gama</div>
+          <div class="academic-institution">Universidade de Brasília (UnB), Campus Gama, Brasília, DF</div>
         </div>
-        <div class="academic-period">Junho de 2022 – Dezembro de 2027 (previsto)</div>
+        <div class="academic-period">junho de 2022 a dezembro de 2027 (previsto, semestre 2027.2)</div>
       </div>
       <div class="academic-content">
         <p class="academic-tcc-highlight">
@@ -1880,11 +1894,11 @@ footer {
     <article class="academic-entry">
       <div class="academic-entry-header">
         <div class="academic-title-wrap">
-          <span class="academic-badge-tag teaching">Docência Assistida</span>
+          <span class="academic-badge-tag teaching">Docência</span>
           <h3 class="academic-role-title">Monitoria: Aerodinâmica de Sistemas Aeroespaciais</h3>
           <div class="academic-institution">Universidade de Brasília · Supervisor: Prof. Olexiy Shynkarenko</div>
         </div>
-        <div class="academic-period">Desde setembro de 2025</div>
+        <div class="academic-period">desde setembro de 2025</div>
       </div>
       <div class="academic-content">
         <ul class="editorial-detail-list">
@@ -1898,20 +1912,34 @@ footer {
       </div>
     </article>
 
-    <!-- 3. Monitorias Cálculo 3 e Física 1 -->
     <article class="academic-entry">
       <div class="academic-entry-header">
         <div class="academic-title-wrap">
-          <span class="academic-badge-tag teaching">Docência Assistida</span>
-          <h3 class="academic-role-title">Monitoria: Cálculo 3 e Física 1</h3>
+          <span class="academic-badge-tag teaching">Docência</span>
+          <h3 class="academic-role-title">Monitoria: Cálculo 3</h3>
           <div class="academic-institution">Universidade de Brasília</div>
         </div>
-        <div class="academic-period">2023 – 2024</div>
+        <div class="academic-period">2024</div>
       </div>
       <div class="academic-content">
         <ul class="editorial-detail-list">
-          <li><strong>Cálculo 3 (2024):</strong> apoio aos alunos em integrais duplas e triplas, transformações de coordenadas, integrais de linha e de superfície, campos vetoriais e os teoremas de Green, Stokes e da divergência.</li>
-          <li><strong>Física 1 (2023):</strong> apoio aos alunos em listas, com base no <em>Curso de Física Básica</em>, de Moysés Nussenzveig: cinemática, dinâmica newtoniana, trabalho e energia, momento linear, dinâmica de corpo rígido e oscilações.</li>
+          <li>Apoio aos alunos em integrais duplas e triplas, transformações de coordenadas, integrais de linha e de superfície, campos vetoriais e os teoremas de Green, Stokes e da divergência.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="academic-entry">
+      <div class="academic-entry-header">
+        <div class="academic-title-wrap">
+          <span class="academic-badge-tag teaching">Docência</span>
+          <h3 class="academic-role-title">Monitoria: Física 1</h3>
+          <div class="academic-institution">Universidade de Brasília</div>
+        </div>
+        <div class="academic-period">2023</div>
+      </div>
+      <div class="academic-content">
+        <ul class="editorial-detail-list">
+          <li>Apoio aos alunos em listas, com base no <em>Curso de Física Básica</em>, de Moysés Nussenzveig: cinemática, dinâmica newtoniana, trabalho e energia, momento linear, dinâmica de corpo rígido e oscilações.</li>
         </ul>
       </div>
     </article>
@@ -1919,8 +1947,7 @@ footer {
 
   <!-- Idiomas Editorial -->
   <div class="languages-editorial-section">
-    <div class="section-tag">Comunicação Global</div>
-    <h3 class="languages-title">Idiomas & Proficiência</h3>
+    <h3 class="languages-title">Idiomas</h3>
 
     <div class="languages-editorial-row">
       <div class="lang-item">
@@ -1929,7 +1956,7 @@ footer {
       </div>
       <div class="lang-item lang-item-featured">
         <div class="lang-name">Inglês</div>
-        <div class="lang-level">Fluência profissional plena · EF SET 81/100 (C2)</div>
+        <div class="lang-level">Fluência profissional plena. EF SET English Certificate, 81/100 (C2)</div>
       </div>
       <div class="lang-item">
         <div class="lang-name">Espanhol</div>
